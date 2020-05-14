@@ -98,11 +98,15 @@ namespace Presentation
                     var validLogin = user.LoginUser(userTextBox.Text, passwordTextBox.Text);
                     if (validLogin == true)
                     {
+                        this.Hide();
+                        frmBienvenida bienvenida = new frmBienvenida();
+                        bienvenida.ShowDialog();
                         frmMenuPrincipal miMenu = new frmMenuPrincipal();
+
                         miMenu.Show();
                         //sobrecargamos el evento formcloser del formulario menu principal
                         miMenu.FormClosed += Logout;
-                        this.Hide();
+                        //this.Hide();
                     }
                     else
                     {
