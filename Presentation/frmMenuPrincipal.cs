@@ -197,5 +197,13 @@ namespace Presentation
                 this.Close();
 
         }
+        //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+                 fechaLabel.Text = DateTime.Now.ToLongDateString();
+                horaLabel.Text = DateTime.Now.ToString("HH:mm:ssss");
+        }
+
+      
     }
 }
