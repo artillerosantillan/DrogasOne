@@ -48,6 +48,7 @@
             this.tituloLabel = new System.Windows.Forms.Label();
             this.panelEscritorioPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.menuPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.tituloBarraPanel.SuspendLayout();
@@ -58,6 +59,7 @@
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(198)))), ((int)(((byte)(134)))));
+            this.menuPanel.Controls.Add(this.cerrarSesionButton);
             this.menuPanel.Controls.Add(this.reportesButton);
             this.menuPanel.Controls.Add(this.usuariosButton);
             this.menuPanel.Controls.Add(this.kardexButton);
@@ -361,6 +363,27 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cerrarSesionButton
+            // 
+            this.cerrarSesionButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cerrarSesionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cerrarSesionButton.FlatAppearance.BorderSize = 0;
+            this.cerrarSesionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cerrarSesionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarSesionButton.ForeColor = System.Drawing.Color.White;
+            this.cerrarSesionButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionButton.Image")));
+            this.cerrarSesionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cerrarSesionButton.Location = new System.Drawing.Point(0, 763);
+            this.cerrarSesionButton.Name = "cerrarSesionButton";
+            this.cerrarSesionButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.cerrarSesionButton.Size = new System.Drawing.Size(219, 59);
+            this.cerrarSesionButton.TabIndex = 9;
+            this.cerrarSesionButton.Text = "    Cerrar Sesión";
+            this.cerrarSesionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cerrarSesionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cerrarSesionButton.UseVisualStyleBackColor = true;
+            this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -406,6 +429,7 @@
         private System.Windows.Forms.Button minimizarButton;
         private System.Windows.Forms.Button maximizarButton;
         private System.Windows.Forms.Button cerrarButton;
+        private System.Windows.Forms.Button cerrarSesionButton;
     }
 }
 

@@ -171,7 +171,9 @@ namespace Presentation
 
         private void cerrarButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Esta seguro de cerrar la aplicasión?", "Alerta",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+               Application.Exit();
         }
 
         private void maximizarButton_Click(object sender, EventArgs e)
@@ -185,6 +187,15 @@ namespace Presentation
         private void minimizarButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cerrarSesionButton_Click(object sender, EventArgs e)
+        {
+            //solo cerramos el formulario menu principal y mostraremos form login
+            if (MessageBox.Show("Esta seguro de cerrar sesión?", "Alerta",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+
         }
     }
 }

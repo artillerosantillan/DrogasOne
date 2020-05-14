@@ -58,7 +58,7 @@ namespace Presentation
         private void passwordTextBox_Leave(object sender, EventArgs e)
         {
             if (passwordTextBox.Text == "")
-            { 
+            {
                 passwordTextBox.Text = "Contraseña";
                 passwordTextBox.ForeColor = Color.WhiteSmoke;
                 passwordTextBox.UseSystemPasswordChar = false;
@@ -100,6 +100,8 @@ namespace Presentation
                     {
                         frmMenuPrincipal miMenu = new frmMenuPrincipal();
                         miMenu.Show();
+                        //sobrecargamos el evento formcloser del formulario menu principal
+                        miMenu.FormClosed += Logout;
                         this.Hide();
                     }
                     else
@@ -109,13 +111,23 @@ namespace Presentation
                 }
                 else msgError("Por favor, instrodusca su contraseña.");
             }
-            else msgError("Por favor, instrodusca su nombre un usuario.");
-             
+            else msgError("Por favor, instrodusca su nombre de usuario.");
+
         }
         private void msgError(string msg)
         {
             errorMensajeLabel.Text = "    " + msg;
             errorMensajeLabel.Visible = true;
+        }
+        //cerrar secion
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            passwordTextBox.Text = "Contraseña";
+            passwordTextBox.UseSystemPasswordChar = false;
+            userTextBox.Text = "Usuario";
+            errorMensajeLabel.Visible = false;
+            this.Show();
+            //userTextBox.Focus();
         }
     }
 }
