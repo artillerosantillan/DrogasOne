@@ -133,5 +133,11 @@ namespace Presentation
             this.Show();
             //userTextBox.Focus();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoverPassword = new frmRecuperarPassword();
+            recoverPassword.ShowDialog();
+        }
     }
 }

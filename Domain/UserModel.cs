@@ -16,6 +16,12 @@ namespace Domain
         {
             return userDao.Login(user, pass);
         }
+
+        //recuperar contrasenia
+        public string recuperarPassword(string userRequesting)
+        {
+            return userDao.recoverPassword(userRequesting);
+        }
         public void AnyMethodos()
         {
             //seguridad y permisos

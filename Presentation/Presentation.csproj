@@ -63,6 +63,12 @@
     <Compile Include="frmMenuPrincipal.designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarPassword.Designer.cs">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemaColor.cs" />
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarPassword.resx">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
