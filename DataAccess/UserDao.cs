@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Common.Cache; //referenciamos la capa common
 
 namespace DataAccess
 {
@@ -25,7 +26,19 @@ namespace DataAccess
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        return true;
+                        //mientres lee las filas agregamos a lo valores a la clase statica
+                        // los numeros derepsenta las columas de a tabla enpiza de 0
+                        while (reader.Read())
+                        {
+                            CacheLoginUsuario.IdUser = reader.GetInt32(0);
+                            //CacheLoginUsuario.LoginName = reader.GetString(1);
+                            //CacheLoginUsuario.Password = reader.GetString(2);
+                            CacheLoginUsuario.FirstName = reader.GetString(3);
+                            CacheLoginUsuario.LastName = reader.GetString(4);
+                            CacheLoginUsuario.Position = reader.GetString(5);
+                            CacheLoginUsuario.Email = reader.GetString(6);
+                        }
+                            return true;
                     }
                     else
                     {

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.reportesButton = new System.Windows.Forms.Button();
             this.usuariosButton = new System.Windows.Forms.Button();
             this.kardexButton = new System.Windows.Forms.Button();
@@ -48,23 +49,22 @@
             this.cerrarFormHijoButton = new System.Windows.Forms.Button();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.panelEscritorioPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cerrarSesionButton = new System.Windows.Forms.Button();
             this.inferiorPanel = new System.Windows.Forms.Panel();
-            this.imagenUserPictureBox = new System.Windows.Forms.PictureBox();
-            this.nombresLabel = new System.Windows.Forms.Label();
-            this.apellidosLabel = new System.Windows.Forms.Label();
-            this.cargoLabel = new System.Windows.Forms.Label();
-            this.horaLabel = new System.Windows.Forms.Label();
             this.fechaLabel = new System.Windows.Forms.Label();
+            this.horaLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.pocisionLabel = new System.Windows.Forms.Label();
+            this.nombresLabel = new System.Windows.Forms.Label();
+            this.imagenUserPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.menuPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.tituloBarraPanel.SuspendLayout();
             this.panelEscritorioPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.inferiorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenUserPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -85,6 +85,27 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(219, 822);
             this.menuPanel.TabIndex = 0;
+            // 
+            // cerrarSesionButton
+            // 
+            this.cerrarSesionButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cerrarSesionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cerrarSesionButton.FlatAppearance.BorderSize = 0;
+            this.cerrarSesionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cerrarSesionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarSesionButton.ForeColor = System.Drawing.Color.White;
+            this.cerrarSesionButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionButton.Image")));
+            this.cerrarSesionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cerrarSesionButton.Location = new System.Drawing.Point(0, 763);
+            this.cerrarSesionButton.Name = "cerrarSesionButton";
+            this.cerrarSesionButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.cerrarSesionButton.Size = new System.Drawing.Size(219, 59);
+            this.cerrarSesionButton.TabIndex = 9;
+            this.cerrarSesionButton.Text = "    Cerrar Sesión";
+            this.cerrarSesionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cerrarSesionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cerrarSesionButton.UseVisualStyleBackColor = true;
+            this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
             // 
             // reportesButton
             // 
@@ -365,47 +386,13 @@
             this.panelEscritorioPanel.Size = new System.Drawing.Size(1014, 742);
             this.panelEscritorioPanel.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1014, 644);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // cerrarSesionButton
-            // 
-            this.cerrarSesionButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cerrarSesionButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cerrarSesionButton.FlatAppearance.BorderSize = 0;
-            this.cerrarSesionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrarSesionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrarSesionButton.ForeColor = System.Drawing.Color.White;
-            this.cerrarSesionButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionButton.Image")));
-            this.cerrarSesionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cerrarSesionButton.Location = new System.Drawing.Point(0, 763);
-            this.cerrarSesionButton.Name = "cerrarSesionButton";
-            this.cerrarSesionButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.cerrarSesionButton.Size = new System.Drawing.Size(219, 59);
-            this.cerrarSesionButton.TabIndex = 9;
-            this.cerrarSesionButton.Text = "    Cerrar Sesión";
-            this.cerrarSesionButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cerrarSesionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.cerrarSesionButton.UseVisualStyleBackColor = true;
-            this.cerrarSesionButton.Click += new System.EventHandler(this.cerrarSesionButton_Click);
-            // 
             // inferiorPanel
             // 
             this.inferiorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
             this.inferiorPanel.Controls.Add(this.fechaLabel);
             this.inferiorPanel.Controls.Add(this.horaLabel);
-            this.inferiorPanel.Controls.Add(this.cargoLabel);
-            this.inferiorPanel.Controls.Add(this.apellidosLabel);
+            this.inferiorPanel.Controls.Add(this.emailLabel);
+            this.inferiorPanel.Controls.Add(this.pocisionLabel);
             this.inferiorPanel.Controls.Add(this.nombresLabel);
             this.inferiorPanel.Controls.Add(this.imagenUserPictureBox);
             this.inferiorPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -414,42 +401,16 @@
             this.inferiorPanel.Size = new System.Drawing.Size(1014, 100);
             this.inferiorPanel.TabIndex = 1;
             // 
-            // imagenUserPictureBox
+            // fechaLabel
             // 
-            this.imagenUserPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("imagenUserPictureBox.Image")));
-            this.imagenUserPictureBox.Location = new System.Drawing.Point(17, 8);
-            this.imagenUserPictureBox.Name = "imagenUserPictureBox";
-            this.imagenUserPictureBox.Size = new System.Drawing.Size(87, 80);
-            this.imagenUserPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imagenUserPictureBox.TabIndex = 0;
-            this.imagenUserPictureBox.TabStop = false;
-            // 
-            // nombresLabel
-            // 
-            this.nombresLabel.AutoSize = true;
-            this.nombresLabel.Location = new System.Drawing.Point(130, 18);
-            this.nombresLabel.Name = "nombresLabel";
-            this.nombresLabel.Size = new System.Drawing.Size(65, 17);
-            this.nombresLabel.TabIndex = 1;
-            this.nombresLabel.Text = "Nombres";
-            // 
-            // apellidosLabel
-            // 
-            this.apellidosLabel.AutoSize = true;
-            this.apellidosLabel.Location = new System.Drawing.Point(130, 41);
-            this.apellidosLabel.Name = "apellidosLabel";
-            this.apellidosLabel.Size = new System.Drawing.Size(118, 17);
-            this.apellidosLabel.TabIndex = 2;
-            this.apellidosLabel.Text = "Apellidos Usuario";
-            // 
-            // cargoLabel
-            // 
-            this.cargoLabel.AutoSize = true;
-            this.cargoLabel.Location = new System.Drawing.Point(130, 63);
-            this.cargoLabel.Name = "cargoLabel";
-            this.cargoLabel.Size = new System.Drawing.Size(46, 17);
-            this.cargoLabel.TabIndex = 3;
-            this.cargoLabel.Text = "Cargo";
+            this.fechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fechaLabel.AutoSize = true;
+            this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaLabel.Location = new System.Drawing.Point(698, 65);
+            this.fechaLabel.Name = "fechaLabel";
+            this.fechaLabel.Size = new System.Drawing.Size(266, 25);
+            this.fechaLabel.TabIndex = 5;
+            this.fechaLabel.Text = "Lunes, 12 de Diciembre 2020";
             // 
             // horaLabel
             // 
@@ -462,16 +423,55 @@
             this.horaLabel.TabIndex = 4;
             this.horaLabel.Text = "21:49:45";
             // 
-            // fechaLabel
+            // emailLabel
             // 
-            this.fechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fechaLabel.AutoSize = true;
-            this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(698, 65);
-            this.fechaLabel.Name = "fechaLabel";
-            this.fechaLabel.Size = new System.Drawing.Size(266, 25);
-            this.fechaLabel.TabIndex = 5;
-            this.fechaLabel.Text = "Lunes, 12 de Diciembre 2020";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(130, 63);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(42, 17);
+            this.emailLabel.TabIndex = 3;
+            this.emailLabel.Text = "Email";
+            // 
+            // pocisionLabel
+            // 
+            this.pocisionLabel.AutoSize = true;
+            this.pocisionLabel.Location = new System.Drawing.Point(130, 28);
+            this.pocisionLabel.Name = "pocisionLabel";
+            this.pocisionLabel.Size = new System.Drawing.Size(46, 17);
+            this.pocisionLabel.TabIndex = 2;
+            this.pocisionLabel.Text = "Cargo";
+            // 
+            // nombresLabel
+            // 
+            this.nombresLabel.AutoSize = true;
+            this.nombresLabel.Location = new System.Drawing.Point(130, 45);
+            this.nombresLabel.Name = "nombresLabel";
+            this.nombresLabel.Size = new System.Drawing.Size(65, 17);
+            this.nombresLabel.TabIndex = 1;
+            this.nombresLabel.Text = "Nombres";
+            // 
+            // imagenUserPictureBox
+            // 
+            this.imagenUserPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("imagenUserPictureBox.Image")));
+            this.imagenUserPictureBox.Location = new System.Drawing.Point(17, 8);
+            this.imagenUserPictureBox.Name = "imagenUserPictureBox";
+            this.imagenUserPictureBox.Size = new System.Drawing.Size(87, 80);
+            this.imagenUserPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imagenUserPictureBox.TabIndex = 0;
+            this.imagenUserPictureBox.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1014, 644);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // horafecha
             // 
@@ -491,16 +491,17 @@
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.menuPanel.ResumeLayout(false);
             this.logoPanel.ResumeLayout(false);
             this.logoPanel.PerformLayout();
             this.tituloBarraPanel.ResumeLayout(false);
             this.tituloBarraPanel.PerformLayout();
             this.panelEscritorioPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.inferiorPanel.ResumeLayout(false);
             this.inferiorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenUserPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,8 +531,8 @@
         private System.Windows.Forms.Panel inferiorPanel;
         private System.Windows.Forms.Label fechaLabel;
         private System.Windows.Forms.Label horaLabel;
-        private System.Windows.Forms.Label cargoLabel;
-        private System.Windows.Forms.Label apellidosLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label pocisionLabel;
         private System.Windows.Forms.Label nombresLabel;
         private System.Windows.Forms.PictureBox imagenUserPictureBox;
         private System.Windows.Forms.Timer horafecha;

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Cache;
 
 namespace Presentation
 {
@@ -195,15 +196,26 @@ namespace Presentation
             if (MessageBox.Show("Esta seguro de cerrar sesión?", "Alerta",
            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
-
         }
-        //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
+  //METODO PARA HORA Y FECHA ACTUAL ----------------------------------------------------------
         private void horafecha_Tick(object sender, EventArgs e)
         {
                  fechaLabel.Text = DateTime.Now.ToLongDateString();
                 horaLabel.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
 
-      
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+        }
+
+        //METODO PARA mostrar el usuario logueado en munu principal-----------------------------------
+
+        private void LoadUserData()
+        {
+            nombresLabel.Text = CacheLoginUsuario.FirstName+ ", "+ CacheLoginUsuario.LastName;
+            pocisionLabel.Text = CacheLoginUsuario.Position;
+            emailLabel.Text = CacheLoginUsuario.Email;
+        }
     }
-}
+} 
