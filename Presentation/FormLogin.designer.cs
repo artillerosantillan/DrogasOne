@@ -40,7 +40,6 @@
             this.cerrarPictureBox = new System.Windows.Forms.PictureBox();
             this.minimizarPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.errorMensajeLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -79,12 +78,12 @@
             this.userTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.userTextBox.Location = new System.Drawing.Point(391, 89);
+            this.userTextBox.Location = new System.Drawing.Point(391, 83);
             this.userTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.userTextBox.Name = "userTextBox";
             this.userTextBox.Size = new System.Drawing.Size(544, 25);
             this.userTextBox.TabIndex = 1;
-            this.userTextBox.Text = "USUARIO";
+            this.userTextBox.Text = "Usuario";
             this.userTextBox.Enter += new System.EventHandler(this.userTextBox_Enter);
             this.userTextBox.Leave += new System.EventHandler(this.userTextBox_Leave);
             // 
@@ -94,12 +93,12 @@
             this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.passwordTextBox.Location = new System.Drawing.Point(391, 171);
+            this.passwordTextBox.Location = new System.Drawing.Point(391, 159);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(544, 25);
             this.passwordTextBox.TabIndex = 2;
-            this.passwordTextBox.Text = "CONTRASEÑA";
+            this.passwordTextBox.Text = "Contraseña";
             this.passwordTextBox.Enter += new System.EventHandler(this.passwordTextBox_Enter);
             this.passwordTextBox.Leave += new System.EventHandler(this.passwordTextBox_Leave);
             // 
@@ -107,7 +106,7 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(391, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(391, 102);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(544, 20);
@@ -119,7 +118,7 @@
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(391, 190);
+            this.pictureBox2.Location = new System.Drawing.Point(391, 178);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(544, 20);
@@ -197,25 +196,16 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "LOGIN";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "label2";
-            // 
             // errorMensajeLabel
             // 
             this.errorMensajeLabel.AutoSize = true;
-            this.errorMensajeLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorMensajeLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorMensajeLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.errorMensajeLabel.Image = ((System.Drawing.Image)(resources.GetObject("errorMensajeLabel.Image")));
             this.errorMensajeLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.errorMensajeLabel.Location = new System.Drawing.Point(387, 230);
+            this.errorMensajeLabel.Location = new System.Drawing.Point(387, 199);
             this.errorMensajeLabel.Name = "errorMensajeLabel";
-            this.errorMensajeLabel.Size = new System.Drawing.Size(164, 23);
+            this.errorMensajeLabel.Size = new System.Drawing.Size(136, 19);
             this.errorMensajeLabel.TabIndex = 11;
             this.errorMensajeLabel.Text = "Mensaje de Error";
             this.errorMensajeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -228,7 +218,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(183)))), ((int)(((byte)(107)))));
             this.ClientSize = new System.Drawing.Size(1040, 406);
             this.Controls.Add(this.errorMensajeLabel);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.minimizarPictureBox);
             this.Controls.Add(this.cerrarPictureBox);
@@ -269,7 +258,6 @@
         private System.Windows.Forms.PictureBox minimizarPictureBox;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label errorMensajeLabel;
     }
 }

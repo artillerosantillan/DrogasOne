@@ -28,7 +28,7 @@ namespace Presentation
 
         private void userTextBox_Enter(object sender, EventArgs e)
         {
-            if (userTextBox.Text == "USUARIO")
+            if (userTextBox.Text == "Usuario")
             {
                 userTextBox.Text = "";
                 userTextBox.ForeColor = Color.WhiteSmoke;
@@ -39,7 +39,7 @@ namespace Presentation
         {
             if (userTextBox.Text == "")
             {
-                userTextBox.Text = "USUARIO";
+                userTextBox.Text = "Usuario";
                 userTextBox.ForeColor = Color.WhiteSmoke;
             }
 
@@ -47,7 +47,7 @@ namespace Presentation
 
         private void passwordTextBox_Enter(object sender, EventArgs e)
         {
-            if (passwordTextBox.Text == "CONTRASEÑA")
+            if (passwordTextBox.Text == "Contraseña")
             {
                 passwordTextBox.Text = "";
                 passwordTextBox.ForeColor = Color.WhiteSmoke;
@@ -59,7 +59,7 @@ namespace Presentation
         {
             if (passwordTextBox.Text == "")
             { 
-                passwordTextBox.Text = "CONTRASEÑA";
+                passwordTextBox.Text = "Contraseña";
                 passwordTextBox.ForeColor = Color.WhiteSmoke;
                 passwordTextBox.UseSystemPasswordChar = false;
 
@@ -90,15 +90,15 @@ namespace Presentation
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (userTextBox.Text != "USUARIO")
+            if (userTextBox.Text != "Usuario")
             {
-                if (passwordTextBox.Text != "CONTRASEÑA")
+                if (passwordTextBox.Text != "Contraseña")
                 {
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(userTextBox.Text, passwordTextBox.Text);
                     if (validLogin == true)
                     {
-                        FormPrincipal miMenu = new FormPrincipal();
+                        frmMenuPrincipal miMenu = new frmMenuPrincipal();
                         miMenu.Show();
                         this.Hide();
                     }
@@ -107,9 +107,9 @@ namespace Presentation
                         msgError("El nombre de usuario o contraseña incorrectos.\n Por favor, intente nuevamente");
                     }
                 }
-                else msgError("Por favor, instrodusca su contraseña");
+                else msgError("Por favor, instrodusca su contraseña.");
             }
-            else msgError("Por favor, instrodusca su nombre un usuario");
+            else msgError("Por favor, instrodusca su nombre un usuario.");
              
         }
         private void msgError(string msg)
