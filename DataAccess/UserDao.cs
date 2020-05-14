@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Common.Cache; //referenciamos la capa common
+using Common;
 
 namespace DataAccess
 {
     public class UserDao: ConnectionToSql
     {
-        public bool Login(string user, string pass)
+        public bool Login(string user, string pass) //metod de iniciar sesion
         {
             using (var connection = GetConnection())
             {
@@ -26,26 +27,36 @@ namespace DataAccess
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        //mientres lee las filas agregamos a lo valores a la clase statica
+                        //mientras lee las filas, cargamos los valores a la clase statica
                         // los numeros derepsenta las columas de a tabla enpiza de 0
                         while (reader.Read())
                         {
                             CacheLoginUsuario.IdUser = reader.GetInt32(0);
-                            //CacheLoginUsuario.LoginName = reader.GetString(1);
-                            //CacheLoginUsuario.Password = reader.GetString(2);
+                            CacheLoginUsuario.LoginName = reader.GetString(1);
+                            CacheLoginUsuario.Password = reader.GetString(2);
                             CacheLoginUsuario.FirstName = reader.GetString(3);
                             CacheLoginUsuario.LastName = reader.GetString(4);
                             CacheLoginUsuario.Position = reader.GetString(5);
                             CacheLoginUsuario.Email = reader.GetString(6);
                         }
-                            return true;
+                        return true;
                     }
                     else
-                    {
                         return false;
-                    }
                 }
             }
-        }
+        } 
+            //
+            public void AnyMethod()
+            {
+                if (CacheLoginUsuario.Position == Cargos.Administrator)
+                {
+                    //
+                }
+                if (CacheLoginUsuario.Position == Cargos.Receptionist || CacheLoginUsuario.Position ==Cargos.Accounting)
+                {
+                    //
+                }
+            }
     }
 }

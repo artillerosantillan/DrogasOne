@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
+using Common;
 
 namespace Presentation
 {
@@ -38,7 +39,33 @@ namespace Presentation
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        //LOAD
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
+            PermisoManger();
+        }
 
+        //-------permiso deseduridad de  acceso a menus 
+        private void PermisoManger()
+        {
+           
+            if (CacheLoginUsuario.Position == Cargos.Accounting)
+            {
+                productoButton.Enabled = false;
+                salidasButton.Enabled = false;
+            }
+            if (CacheLoginUsuario.Position == Cargos.Receptionist)
+            {
+                comprasButton.Enabled = false;
+                salidasButton.Enabled = false;
+                proveedoresButton.Enabled = false;
+            }
+            if (CacheLoginUsuario.Position == Cargos.Administrator)
+            {
+                //codes 
+            }
+        }
 
         //Metodos
         private Color SelectThemeColor()
@@ -204,10 +231,7 @@ namespace Presentation
                 horaLabel.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
 
-        private void frmMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            LoadUserData();
-        }
+        
 
         //METODO PARA mostrar el usuario logueado en munu principal-----------------------------------
 
