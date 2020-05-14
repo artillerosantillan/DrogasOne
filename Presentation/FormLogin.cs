@@ -90,7 +90,7 @@ namespace Presentation
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (userTextBox.Text != "Usuario")
+            if (userTextBox.Text != "Usuario" && userTextBox.TextLength > 2)
             {
                 if (passwordTextBox.Text != "Contraseña")
                 {
@@ -107,6 +107,10 @@ namespace Presentation
                     else
                     {
                         msgError("El nombre de usuario o contraseña incorrectos.\n Por favor, intente nuevamente");
+                        passwordTextBox.Text = "Contraseña";
+                        passwordTextBox.UseSystemPasswordChar = false;
+                        userTextBox.Focus();
+
                     }
                 }
                 else msgError("Por favor, instrodusca su contraseña.");
