@@ -241,5 +241,11 @@ namespace Presentation
             pocisionLabel.Text = CacheLoginUsuario.Position;
             emailLabel.Text = CacheLoginUsuario.Email;
         }
+
+        private void editProfileLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmPerfilUsuario miMenu = new frmPerfilUsuario();
+            miMenu.Show();
+        }
     }
 } 

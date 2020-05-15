@@ -58,6 +58,7 @@
             this.imagenUserPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
             this.menuPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.tituloBarraPanel.SuspendLayout();
@@ -389,6 +390,7 @@
             // inferiorPanel
             // 
             this.inferiorPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            this.inferiorPanel.Controls.Add(this.editProfileLinkLabel);
             this.inferiorPanel.Controls.Add(this.fechaLabel);
             this.inferiorPanel.Controls.Add(this.horaLabel);
             this.inferiorPanel.Controls.Add(this.emailLabel);
@@ -396,9 +398,9 @@
             this.inferiorPanel.Controls.Add(this.nombresLabel);
             this.inferiorPanel.Controls.Add(this.imagenUserPictureBox);
             this.inferiorPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.inferiorPanel.Location = new System.Drawing.Point(0, 642);
+            this.inferiorPanel.Location = new System.Drawing.Point(0, 639);
             this.inferiorPanel.Name = "inferiorPanel";
-            this.inferiorPanel.Size = new System.Drawing.Size(1014, 100);
+            this.inferiorPanel.Size = new System.Drawing.Size(1014, 103);
             this.inferiorPanel.TabIndex = 1;
             // 
             // fechaLabel
@@ -406,7 +408,7 @@
             this.fechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(698, 65);
+            this.fechaLabel.Location = new System.Drawing.Point(698, 70);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(266, 25);
             this.fechaLabel.TabIndex = 5;
@@ -417,7 +419,7 @@
             this.horaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.horaLabel.AutoSize = true;
             this.horaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaLabel.Location = new System.Drawing.Point(705, 8);
+            this.horaLabel.Location = new System.Drawing.Point(705, 13);
             this.horaLabel.Name = "horaLabel";
             this.horaLabel.Size = new System.Drawing.Size(253, 67);
             this.horaLabel.TabIndex = 4;
@@ -426,7 +428,7 @@
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(130, 63);
+            this.emailLabel.Location = new System.Drawing.Point(130, 49);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(42, 17);
             this.emailLabel.TabIndex = 3;
@@ -435,7 +437,7 @@
             // pocisionLabel
             // 
             this.pocisionLabel.AutoSize = true;
-            this.pocisionLabel.Location = new System.Drawing.Point(130, 28);
+            this.pocisionLabel.Location = new System.Drawing.Point(130, 13);
             this.pocisionLabel.Name = "pocisionLabel";
             this.pocisionLabel.Size = new System.Drawing.Size(46, 17);
             this.pocisionLabel.TabIndex = 2;
@@ -444,7 +446,7 @@
             // nombresLabel
             // 
             this.nombresLabel.AutoSize = true;
-            this.nombresLabel.Location = new System.Drawing.Point(130, 45);
+            this.nombresLabel.Location = new System.Drawing.Point(130, 31);
             this.nombresLabel.Name = "nombresLabel";
             this.nombresLabel.Size = new System.Drawing.Size(65, 17);
             this.nombresLabel.TabIndex = 1;
@@ -453,7 +455,7 @@
             // imagenUserPictureBox
             // 
             this.imagenUserPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("imagenUserPictureBox.Image")));
-            this.imagenUserPictureBox.Location = new System.Drawing.Point(17, 8);
+            this.imagenUserPictureBox.Location = new System.Drawing.Point(17, 13);
             this.imagenUserPictureBox.Name = "imagenUserPictureBox";
             this.imagenUserPictureBox.Size = new System.Drawing.Size(87, 80);
             this.imagenUserPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -477,6 +479,17 @@
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
+            // 
+            // editProfileLinkLabel
+            // 
+            this.editProfileLinkLabel.AutoSize = true;
+            this.editProfileLinkLabel.Location = new System.Drawing.Point(130, 70);
+            this.editProfileLinkLabel.Name = "editProfileLinkLabel";
+            this.editProfileLinkLabel.Size = new System.Drawing.Size(58, 17);
+            this.editProfileLinkLabel.TabIndex = 6;
+            this.editProfileLinkLabel.TabStop = true;
+            this.editProfileLinkLabel.Text = "Mi Perfil";
+            this.editProfileLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.editProfileLinkLabel_LinkClicked);
             // 
             // frmMenuPrincipal
             // 
@@ -536,6 +549,7 @@
         private System.Windows.Forms.Label nombresLabel;
         private System.Windows.Forms.PictureBox imagenUserPictureBox;
         private System.Windows.Forms.Timer horafecha;
+        private System.Windows.Forms.LinkLabel editProfileLinkLabel;
     }
 }
 
