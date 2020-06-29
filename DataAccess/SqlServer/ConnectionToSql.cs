@@ -12,11 +12,12 @@ namespace DataAccess
         private readonly string connectionstring;
         public ConnectionToSql()
         {
-            connectionstring = "Server=.; DataBase=MyCompany; User Id=sa;Password=sa1;integrated security= false";
+            connectionstring = "Server=.; DataBase=DrogasOneCNS; User Id=sa;Password=sa1;integrated security= false";
         }
         protected SqlConnection GetConnection()
         {
             return new SqlConnection(connectionstring);
         }
+
     }
 }

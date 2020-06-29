@@ -32,8 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>helper\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,22 +49,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Borrarme.cs">
+    <Compile Include="frmMenuContenedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Borrarme.Designer.cs">
-      <DependentUpon>Borrarme.cs</DependentUpon>
+    <Compile Include="frmMenuContenedor.Designer.cs">
+      <DependentUpon>frmMenuContenedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="helper\RegexUtilities.cs" />
+    <Compile Include="Modulos\Maestros\Productos\frmMantenimientoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.designer.cs">
+    <Compile Include="Modulos\Maestros\Productos\frmMantenimientoProducto.Designer.cs">
+      <DependentUpon>frmMantenimientoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Maestros\Proveedor\frmMantenimientoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Maestros\Proveedor\frmMantenimientoProveedor.Designer.cs">
+      <DependentUpon>frmMantenimientoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Maestros\Productos\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Maestros\Productos\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Maestros\Proveedor\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Maestros\Proveedor\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBienvenida.cs">
+    <Compile Include="Stylos\frmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBienvenida.Designer.cs">
+    <Compile Include="Stylos\frmBienvenida.Designer.cs">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuPrincipal.cs">
@@ -69,34 +98,49 @@
     <Compile Include="frmMenuPrincipal.designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPerfilUsuario.cs">
+    <Compile Include="Modulos\Maestros\User\frmPerfilUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPerfilUsuario.Designer.cs">
+    <Compile Include="Modulos\Maestros\User\frmPerfilUsuario.Designer.cs">
       <DependentUpon>frmPerfilUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecuperarPassword.cs">
+    <Compile Include="Seguridad\frmRecuperarPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecuperarPassword.Designer.cs">
+    <Compile Include="Seguridad\frmRecuperarPassword.Designer.cs">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThemaColor.cs" />
-    <EmbeddedResource Include="FormLogin.resx">
+    <Compile Include="Stylos\ThemaColor.cs" />
+    <EmbeddedResource Include="frmMenuContenedor.resx">
+      <DependentUpon>frmMenuContenedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Maestros\Productos\frmMantenimientoProducto.resx">
+      <DependentUpon>frmMantenimientoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Maestros\Proveedor\frmMantenimientoProveedor.resx">
+      <DependentUpon>frmMantenimientoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Maestros\Productos\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Maestros\Proveedor\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBienvenida.resx">
+    <EmbeddedResource Include="Stylos\frmBienvenida.resx">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPerfilUsuario.resx">
+    <EmbeddedResource Include="Modulos\Maestros\User\frmPerfilUsuario.resx">
       <DependentUpon>frmPerfilUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecuperarPassword.resx">
+    <EmbeddedResource Include="Seguridad\frmRecuperarPassword.resx">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -126,10 +170,15 @@
       <Project>{ad5c1707-35f5-4352-ba9e-41674392bd79}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{fa840830-08d9-4f8a-9ef3-f91e9b172577}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{21b92735-6d20-4327-991d-20275b6effc6}</Project>
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

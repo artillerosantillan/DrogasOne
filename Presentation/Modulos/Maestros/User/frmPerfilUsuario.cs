@@ -29,15 +29,15 @@ namespace Presentation
         private void loadUserData()
         {
             //View
-            userLabel.Text = CacheLoginUsuario.LoginName;
-            nameLabel.Text = CacheLoginUsuario.FirstName;
-            lastNameLabel.Text = CacheLoginUsuario.LastName;
+            userLabel.Text = CacheLoginUsuario.LoginUsuario;
+            nameLabel.Text = CacheLoginUsuario.Nombres;
+            lastNameLabel.Text = CacheLoginUsuario.Apellidos;
             emailLabel.Text = CacheLoginUsuario.Email;
-            positionLabel.Text = CacheLoginUsuario.Position;
+            positionLabel.Text = Convert.ToString (CacheLoginUsuario.IdRol);
             //Edit Panel
-            userNameTextBox.Text = CacheLoginUsuario.LoginName;
-            firtNameTextBox.Text = CacheLoginUsuario.FirstName;
-            lastNameTextBox.Text = CacheLoginUsuario.LastName;
+            userNameTextBox.Text = CacheLoginUsuario.LoginUsuario;
+            firtNameTextBox.Text = CacheLoginUsuario.Nombres;
+            lastNameTextBox.Text = CacheLoginUsuario.Apellidos;
             emailTextBox.Text = CacheLoginUsuario.Email;
             passwordTextBox.Text = CacheLoginUsuario.Password;
             confirmPassTextBox.Text = CacheLoginUsuario.Password;
@@ -102,7 +102,7 @@ namespace Presentation
                         if (currentPasswordTextBox.Text == CacheLoginUsuario.Password)
                         {
                             var userModel = new UserModel(
-                                idUser: CacheLoginUsuario.IdUser,
+                                idUser: CacheLoginUsuario.IdUsuario,
                                 loginName: userNameTextBox.Text,
                                 password: passwordTextBox.Text,
                                 firstName: firtNameTextBox.Text,

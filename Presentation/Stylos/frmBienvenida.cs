@@ -42,7 +42,7 @@ namespace Presentation
 
         private void frmBienvenida_Load(object sender, EventArgs e)
         {
-            userlLabel.Text = CacheLoginUsuario.FirstName + ", " + CacheLoginUsuario.LastName;
+            userlLabel.Text = CacheLoginUsuario.Nombres + ", " + CacheLoginUsuario.Apellidos;
             this.Opacity = 0.0;
             //Inicializamos estas propiedades de la barra de progreso, mediante codigo.(Opcional)
             progressBar1.Value = 0;

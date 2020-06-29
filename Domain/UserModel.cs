@@ -67,14 +67,14 @@ namespace Domain
         public void AnyMethodos()
         {
             //seguridad y permisos
-            if (CacheLoginUsuario.Position == Cargos.Administrator)
-            {
-                //
-            }
-            if (CacheLoginUsuario.Position == Cargos.Receptionist || CacheLoginUsuario.Position == Cargos.Accounting)
-            {
-                //
-            }
+            //if (CacheLoginUsuario.Position == Cargos.Administrator)
+            //{
+            //    //
+            //}
+            //if (CacheLoginUsuario.Position == Cargos.Receptionist || CacheLoginUsuario.Position == Cargos.Accounting)
+            //{
+            //    //
+            //}
         }
     }
     

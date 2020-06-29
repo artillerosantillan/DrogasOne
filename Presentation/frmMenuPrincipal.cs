@@ -50,21 +50,21 @@ namespace Presentation
         private void PermisoManger()
         {
            
-            if (CacheLoginUsuario.Position == Cargos.Accounting)
-            {
-                productoButton.Enabled = false;
-                salidasButton.Enabled = false;
-            }
-            if (CacheLoginUsuario.Position == Cargos.Receptionist)
-            {
-                comprasButton.Enabled = false;
-                salidasButton.Enabled = false;
-                proveedoresButton.Enabled = false;
-            }
-            if (CacheLoginUsuario.Position == Cargos.Administrator)
-            {
-                //codes 
-            }
+            //if (CacheLoginUsuario.Position == Cargos.Accounting)
+            //{
+            //    productoButton.Enabled = false;
+            //    salidasButton.Enabled = false;
+            //}
+            //if (CacheLoginUsuario.Position == Cargos.Receptionist)
+            //{
+            //    comprasButton.Enabled = false;
+            //    salidasButton.Enabled = false;
+            //    proveedoresButton.Enabled = false;
+            //}
+            //if (CacheLoginUsuario.Position == Cargos.Administrator)
+            //{
+            //    //codes 
+            //}
         }
 
         //Metodos
@@ -135,7 +135,7 @@ namespace Presentation
 
         private void productoButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Borrarme(),sender);
+           
         }
 
         private void salidasButton_Click(object sender, EventArgs e)
@@ -237,8 +237,8 @@ namespace Presentation
 
         private void LoadUserData()
         {
-            nombresLabel.Text = CacheLoginUsuario.FirstName+ ", "+ CacheLoginUsuario.LastName;
-            pocisionLabel.Text = CacheLoginUsuario.Position;
+            nombresLabel.Text = CacheLoginUsuario.Nombres+ ", "+ CacheLoginUsuario.Apellidos;
+            pocisionLabel.Text = Convert.ToString( CacheLoginUsuario.IdRol);
             emailLabel.Text = CacheLoginUsuario.Email;
         }
 

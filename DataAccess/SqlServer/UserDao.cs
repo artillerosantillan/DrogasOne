@@ -43,7 +43,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Users WHERE LoginName = @user AND Password = @pass";
+                    command.CommandText = "SELECT * FROM Usuario WHERE LoginUsuario = @user AND Password = @pass";
                     command.Parameters.AddWithValue("@user", user);
                     command.Parameters.AddWithValue("@pass", pass);
                     command.CommandType = CommandType.Text;
@@ -54,13 +54,14 @@ namespace DataAccess
                         // los numeros derepsenta las columas de a tabla enpiza de 0
                         while (reader.Read())
                         {
-                            CacheLoginUsuario.IdUser = reader.GetInt32(0);
-                            CacheLoginUsuario.LoginName = reader.GetString(1);
-                            CacheLoginUsuario.Password = reader.GetString(2);
-                            CacheLoginUsuario.FirstName = reader.GetString(3);
-                            CacheLoginUsuario.LastName = reader.GetString(4);
-                            CacheLoginUsuario.Position = reader.GetString(5);
-                            CacheLoginUsuario.Email = reader.GetString(6);
+                            CacheLoginUsuario.IdUsuario = reader.GetInt32(0);
+                            CacheLoginUsuario.LoginUsuario = reader.GetString(1);
+                            CacheLoginUsuario.Nombres = reader.GetString(2);
+                            CacheLoginUsuario.Apellidos = reader.GetString(3);
+                            CacheLoginUsuario.Password = reader.GetString(4);
+                            CacheLoginUsuario.FechaModificacionClave = reader.GetDateTime(5);
+                            CacheLoginUsuario.IdRol = reader.GetInt32(6);
+                            CacheLoginUsuario.Email = reader.GetString(7);
                         }
                         return true;
                     }
@@ -109,14 +110,14 @@ namespace DataAccess
         //
         public void AnyMethod()
             {
-                if (CacheLoginUsuario.Position == Cargos.Administrator)
-                {
-                    //
-                }
-                if (CacheLoginUsuario.Position == Cargos.Receptionist || CacheLoginUsuario.Position ==Cargos.Accounting)
-                {
-                    //
-                }
+                //if (CacheLoginUsuario.IdRol == Cargos.Administrator)
+                //{
+                //    //
+                //}
+                //if (CacheLoginUsuario.IdRol == Cargos.Receptionist || CacheLoginUsuario.Position ==Cargos.Accounting)
+                //{
+                //    //
+                //}
             }
     }
 }

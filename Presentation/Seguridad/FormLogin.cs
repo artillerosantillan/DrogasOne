@@ -101,8 +101,7 @@ namespace Presentation
                         this.Hide();
                         frmBienvenida bienvenida = new frmBienvenida();
                         bienvenida.ShowDialog();
-                        frmMenuPrincipal miMenu = new frmMenuPrincipal();
-
+                        frmMenuContenedor miMenu = new frmMenuContenedor();
                         miMenu.Show();
                         //sobrecargamos el evento formcloser del formulario menu principal
                         miMenu.FormClosed += Logout;

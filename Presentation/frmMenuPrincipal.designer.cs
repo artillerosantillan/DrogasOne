@@ -50,22 +50,20 @@
             this.tituloLabel = new System.Windows.Forms.Label();
             this.panelEscritorioPanel = new System.Windows.Forms.Panel();
             this.inferiorPanel = new System.Windows.Forms.Panel();
+            this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
             this.fechaLabel = new System.Windows.Forms.Label();
             this.horaLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.pocisionLabel = new System.Windows.Forms.Label();
             this.nombresLabel = new System.Windows.Forms.Label();
             this.imagenUserPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.editProfileLinkLabel = new System.Windows.Forms.LinkLabel();
             this.menuPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
             this.tituloBarraPanel.SuspendLayout();
             this.panelEscritorioPanel.SuspendLayout();
             this.inferiorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenUserPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -84,7 +82,7 @@
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(219, 822);
+            this.menuPanel.Size = new System.Drawing.Size(219, 898);
             this.menuPanel.TabIndex = 0;
             // 
             // cerrarSesionButton
@@ -97,7 +95,7 @@
             this.cerrarSesionButton.ForeColor = System.Drawing.Color.White;
             this.cerrarSesionButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionButton.Image")));
             this.cerrarSesionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cerrarSesionButton.Location = new System.Drawing.Point(0, 763);
+            this.cerrarSesionButton.Location = new System.Drawing.Point(0, 839);
             this.cerrarSesionButton.Name = "cerrarSesionButton";
             this.cerrarSesionButton.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.cerrarSesionButton.Size = new System.Drawing.Size(219, 59);
@@ -308,7 +306,7 @@
             this.tituloBarraPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.tituloBarraPanel.Location = new System.Drawing.Point(219, 0);
             this.tituloBarraPanel.Name = "tituloBarraPanel";
-            this.tituloBarraPanel.Size = new System.Drawing.Size(1014, 80);
+            this.tituloBarraPanel.Size = new System.Drawing.Size(1177, 80);
             this.tituloBarraPanel.TabIndex = 1;
             this.tituloBarraPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tituloBarraPanel_MouseDown);
             // 
@@ -318,7 +316,7 @@
             this.minimizarButton.FlatAppearance.BorderSize = 0;
             this.minimizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizarButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizarButton.Image")));
-            this.minimizarButton.Location = new System.Drawing.Point(897, 3);
+            this.minimizarButton.Location = new System.Drawing.Point(1060, 3);
             this.minimizarButton.Name = "minimizarButton";
             this.minimizarButton.Size = new System.Drawing.Size(30, 30);
             this.minimizarButton.TabIndex = 4;
@@ -331,7 +329,7 @@
             this.maximizarButton.FlatAppearance.BorderSize = 0;
             this.maximizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maximizarButton.Image = ((System.Drawing.Image)(resources.GetObject("maximizarButton.Image")));
-            this.maximizarButton.Location = new System.Drawing.Point(939, 3);
+            this.maximizarButton.Location = new System.Drawing.Point(1102, 3);
             this.maximizarButton.Name = "maximizarButton";
             this.maximizarButton.Size = new System.Drawing.Size(30, 30);
             this.maximizarButton.TabIndex = 3;
@@ -344,7 +342,7 @@
             this.cerrarButton.FlatAppearance.BorderSize = 0;
             this.cerrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cerrarButton.Image = ((System.Drawing.Image)(resources.GetObject("cerrarButton.Image")));
-            this.cerrarButton.Location = new System.Drawing.Point(972, 3);
+            this.cerrarButton.Location = new System.Drawing.Point(1135, 3);
             this.cerrarButton.Name = "cerrarButton";
             this.cerrarButton.Size = new System.Drawing.Size(30, 30);
             this.cerrarButton.TabIndex = 2;
@@ -369,7 +367,7 @@
             this.tituloLabel.AutoSize = true;
             this.tituloLabel.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloLabel.ForeColor = System.Drawing.Color.White;
-            this.tituloLabel.Location = new System.Drawing.Point(411, 13);
+            this.tituloLabel.Location = new System.Drawing.Point(492, 13);
             this.tituloLabel.Name = "tituloLabel";
             this.tituloLabel.Size = new System.Drawing.Size(85, 35);
             this.tituloLabel.TabIndex = 0;
@@ -380,11 +378,11 @@
             this.panelEscritorioPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEscritorioPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(198)))), ((int)(((byte)(134)))));
             this.panelEscritorioPanel.Controls.Add(this.inferiorPanel);
-            this.panelEscritorioPanel.Controls.Add(this.pictureBox1);
             this.panelEscritorioPanel.Location = new System.Drawing.Point(219, 80);
             this.panelEscritorioPanel.Name = "panelEscritorioPanel";
-            this.panelEscritorioPanel.Size = new System.Drawing.Size(1014, 742);
+            this.panelEscritorioPanel.Size = new System.Drawing.Size(1177, 818);
             this.panelEscritorioPanel.TabIndex = 2;
             // 
             // inferiorPanel
@@ -398,17 +396,28 @@
             this.inferiorPanel.Controls.Add(this.nombresLabel);
             this.inferiorPanel.Controls.Add(this.imagenUserPictureBox);
             this.inferiorPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.inferiorPanel.Location = new System.Drawing.Point(0, 639);
+            this.inferiorPanel.Location = new System.Drawing.Point(0, 715);
             this.inferiorPanel.Name = "inferiorPanel";
-            this.inferiorPanel.Size = new System.Drawing.Size(1014, 103);
+            this.inferiorPanel.Size = new System.Drawing.Size(1177, 103);
             this.inferiorPanel.TabIndex = 1;
+            // 
+            // editProfileLinkLabel
+            // 
+            this.editProfileLinkLabel.AutoSize = true;
+            this.editProfileLinkLabel.Location = new System.Drawing.Point(130, 70);
+            this.editProfileLinkLabel.Name = "editProfileLinkLabel";
+            this.editProfileLinkLabel.Size = new System.Drawing.Size(58, 17);
+            this.editProfileLinkLabel.TabIndex = 6;
+            this.editProfileLinkLabel.TabStop = true;
+            this.editProfileLinkLabel.Text = "Mi Perfil";
+            this.editProfileLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.editProfileLinkLabel_LinkClicked);
             // 
             // fechaLabel
             // 
             this.fechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fechaLabel.AutoSize = true;
             this.fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaLabel.Location = new System.Drawing.Point(698, 70);
+            this.fechaLabel.Location = new System.Drawing.Point(861, 70);
             this.fechaLabel.Name = "fechaLabel";
             this.fechaLabel.Size = new System.Drawing.Size(266, 25);
             this.fechaLabel.TabIndex = 5;
@@ -419,7 +428,7 @@
             this.horaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.horaLabel.AutoSize = true;
             this.horaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaLabel.Location = new System.Drawing.Point(705, 13);
+            this.horaLabel.Location = new System.Drawing.Point(868, 13);
             this.horaLabel.Name = "horaLabel";
             this.horaLabel.Size = new System.Drawing.Size(253, 67);
             this.horaLabel.TabIndex = 4;
@@ -462,40 +471,16 @@
             this.imagenUserPictureBox.TabIndex = 0;
             this.imagenUserPictureBox.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1014, 644);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // horafecha
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // editProfileLinkLabel
-            // 
-            this.editProfileLinkLabel.AutoSize = true;
-            this.editProfileLinkLabel.Location = new System.Drawing.Point(130, 70);
-            this.editProfileLinkLabel.Name = "editProfileLinkLabel";
-            this.editProfileLinkLabel.Size = new System.Drawing.Size(58, 17);
-            this.editProfileLinkLabel.TabIndex = 6;
-            this.editProfileLinkLabel.TabStop = true;
-            this.editProfileLinkLabel.Text = "Mi Perfil";
-            this.editProfileLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.editProfileLinkLabel_LinkClicked);
-            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 822);
+            this.ClientSize = new System.Drawing.Size(1396, 898);
             this.Controls.Add(this.panelEscritorioPanel);
             this.Controls.Add(this.tituloBarraPanel);
             this.Controls.Add(this.menuPanel);
@@ -514,7 +499,6 @@
             this.inferiorPanel.ResumeLayout(false);
             this.inferiorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenUserPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -536,7 +520,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelEscritorioPanel;
         private System.Windows.Forms.Button cerrarFormHijoButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button minimizarButton;
         private System.Windows.Forms.Button maximizarButton;
         private System.Windows.Forms.Button cerrarButton;
