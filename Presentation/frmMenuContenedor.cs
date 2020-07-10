@@ -1,4 +1,5 @@
 ﻿using Presentation.Modulos;
+using Presentation.Movimientos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,13 @@ namespace Presentation
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProveedor miForm = new frmProveedor();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras miForm = new frmCompras();
             miForm.MdiParent = this;
             miForm.Show();
         }

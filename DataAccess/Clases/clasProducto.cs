@@ -11,6 +11,7 @@ namespace DataAccess.Clases
 {
     public class clasProducto : ConnectionToSql
     {
+        
         public DataTable listadoProducto()
         {
             using (var connection = GetConnection())
@@ -140,8 +141,55 @@ namespace DataAccess.Clases
                     return false;
                 }
             }
+        }
 
+        public entProducto GetProductoByIDProducto(string codigo)
+        {
+            entProducto data = new entProducto();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = @"SELECT IDProducto, 
+                                                   Descripcion,
+                                                   IDUnidadManejo, 
+                                                   IDAlmacen, 
+                                                   Precio,
+                                                   Notas,
+                                                   IDIVA,
+                                                   CantidadKardex,
+                                                   CantidadVigente 
+                                            FROM Producto 
+                                            WHERE IDProducto=@IDProducto";
+                    Comando.Parameters.AddWithValue("@IDProducto", codigo);
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader LeerFilas = Comando.ExecuteReader();
+                    if (LeerFilas.HasRows)
+                    {
+                        while (LeerFilas.Read())
+                        {
+                            data.IDProducto = LeerFilas.GetString(0);
+                            data.Descripcion = LeerFilas.GetString(1); ;
+                            data.IDUnidadManejo = LeerFilas.GetString(2); ;
+                            data.IDAlmacen = LeerFilas.GetInt32(3);
+                            data.Precio = LeerFilas.GetDecimal(4);
+                            data.Notas = LeerFilas.GetString(5); ;
+                            data.IDIVA = LeerFilas.GetInt32(6);
+                            data.CantidadKardex = LeerFilas.GetInt32(7);
+                            data.CantidadVigente = LeerFilas.GetInt32(8);
+                        }
+                        return data;
+                    }
+                    else
+                        return null;
+                }
+            }
 
         }
+
+
     }
 }

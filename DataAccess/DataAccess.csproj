@@ -45,6 +45,7 @@
     <Compile Include="Clases\clasCodigoBarra.cs" />
     <Compile Include="Clases\clasDeposito.cs" />
     <Compile Include="Clases\clasDepositoProducto.cs" />
+    <Compile Include="Clases\clasCADProducto.cs" />
     <Compile Include="Clases\clasIVA.cs" />
     <Compile Include="Clases\clasProveedor.cs" />
     <Compile Include="Clases\clasProducto.cs" />
@@ -61,7 +62,6 @@
     <Compile Include="Entities\entUnidadManejo.cs" />
     <Compile Include="MailServices\ServidorCorreoMaestro.cs" />
     <Compile Include="MailServices\SoporteSistema.cs" />
-    <Compile Include="SqlServer\ConexionBD.cs" />
     <Compile Include="SqlServer\ConnectionToSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServer\UserDao.cs" />

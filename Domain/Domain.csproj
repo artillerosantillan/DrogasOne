@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Models\modAlmacen.cs" />
     <Compile Include="Models\modBarraProducto.cs" />
+    <Compile Include="Models\modCADProducto.cs" />
+    <Compile Include="Models\modDeposito.cs" />
     <Compile Include="Models\modDepositoProducto.cs" />
     <Compile Include="Models\modIVA.cs" />
     <Compile Include="Models\modProducto.cs" />

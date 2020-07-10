@@ -13,7 +13,7 @@ namespace DataAccess.Entities
         public string IDUnidadManejo { get; set; }
         public int IDAlmacen { get; set; }
         public int IDIVA { get; set; }
-        public Double Precio { get; set; }
+        public decimal Precio { get; set; }
         public string Notas { get; set; }
         public int CantidadKardex { get; set; }
         public int CantidadVigente { get; set; }

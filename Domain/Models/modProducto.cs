@@ -36,6 +36,11 @@ namespace Domain.Models
         {
             return ObjetoDato.existeProducto(documento);
         }
+        public entProducto getProducto(string codigo)
+        {
+            return ObjetoDato.GetProductoByIDProducto(codigo);
+        }
+
 
 
     }

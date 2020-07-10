@@ -80,6 +80,24 @@
     <Compile Include="Modulos\Maestros\Proveedor\frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\Compras\frmBusquedaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\Compras\frmBusquedaProducto.Designer.cs">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Compras\frmBusquedaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\Compras\frmBusquedaProveedor.Designer.cs">
+      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Compras\frmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\Compras\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +145,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Maestros\Proveedor\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Compras\frmBusquedaProducto.resx">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Compras\frmBusquedaProveedor.resx">
+      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Compras\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

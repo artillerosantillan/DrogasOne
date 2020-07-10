@@ -82,7 +82,7 @@ namespace Presentation.Modulos.Maestros.Productos
                     objEntidadProd.IDUnidadManejo = iDUnidadManejoComboBox.Text;
                     objEntidadProd.IDAlmacen = Convert.ToInt32(iDAlmacenComboBox.SelectedValue);
                     objEntidadProd.IDIVA = Convert.ToInt32(iDIVAComboBox.SelectedValue);
-                    objEntidadProd.Precio = Convert.ToDouble(precioTextBox.Text);
+                    objEntidadProd.Precio = Convert.ToDecimal(precioTextBox.Text);
                     objEntidadProd.Notas = notasTextBox.Text;
                     objEntidadProd.CantidadKardex = Convert.ToInt32(cantidadKardexTextBox.Text);
                     objEntidadProd.CantidadVigente = Convert.ToInt32(cantidadVigenteTextBox.Text);
