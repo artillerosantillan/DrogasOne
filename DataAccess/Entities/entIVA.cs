@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Entities
 {
-    class entIVA
+    public class entIVA
     {
         public int IDIVA { get; set; }
         public string Descripcion { get; set; }
-        public Double Tarifa { get; set; }
+        public Decimal Tarifa { get; set; }
     }
 }

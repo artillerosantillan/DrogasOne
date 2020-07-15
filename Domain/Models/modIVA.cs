@@ -1,4 +1,5 @@
 ﻿using DataAccess.Clases;
+using DataAccess.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +15,10 @@ namespace Domain.Models
         public DataTable modListadoIVA()
         {
             return ObjetoDato.ListarIVA ();
+        }
+        public entIVA getIVA(int codigo)
+        {
+            return ObjetoDato.GetIVAByIDIVA(codigo);
         }
     }
 }

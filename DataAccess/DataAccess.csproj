@@ -51,11 +51,15 @@
     <Compile Include="Clases\clasProducto.cs" />
     <Compile Include="Clases\clasTipoDocumento.cs" />
     <Compile Include="Clases\clasUnidadManejo.cs" />
+    <Compile Include="Clases\Movimientos\clasCompra.cs" />
     <Compile Include="Entities\entAlmacen.cs" />
     <Compile Include="Entities\entCodigoBarra.cs" />
+    <Compile Include="Entities\Movimientos\entCompra.cs" />
     <Compile Include="Entities\entDeposito.cs" />
     <Compile Include="Entities\entDepositoProducto.cs" />
     <Compile Include="Entities\entIVA.cs" />
+    <Compile Include="Entities\Movimientos\entCompraDetalle.cs" />
+    <Compile Include="Entities\Movimientos\entKardex.cs" />
     <Compile Include="Entities\entProducto.cs" />
     <Compile Include="Entities\entProveedor.cs" />
     <Compile Include="Entities\entTipoDocumento.cs" />
@@ -72,5 +76,6 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
