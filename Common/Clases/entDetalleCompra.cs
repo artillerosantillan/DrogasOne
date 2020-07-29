@@ -12,7 +12,7 @@ namespace DataAccess.Entities
         public string Descripcion { get; set; }
         public string IDUnidadManejo { get; set; }
         public decimal Costo { get; set; }
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
         public string Lote { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public decimal PorcentajeIVA { get; set; }

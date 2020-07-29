@@ -16,17 +16,21 @@ namespace Domain.Models
         {
             return ObjetoDato.listadoDepositoProducto(codigo);
         }
-        public int modObtenerStockDepositoProducto(string CodigoProducto, int CodigoDeposito)
+        public decimal modObtenerStockDepositoProducto(string CodigoProducto, int CodigoDeposito)
         {
             return ObjetoDato.obtenerStockDepositoProducto(CodigoProducto, CodigoDeposito);
         }
-        public void modActualizarStockDepositoProducto(string IDProducto, int IDDeposito, int Cantidad)
+        public void modActualizarStockDepositoProducto(string IDProducto, int IDDeposito, decimal Cantidad)
         {
             ObjetoDato.ActualizarStockDepositoProducto(IDProducto, IDDeposito, Cantidad);
         }
-        public void modInsertarDepositoProducto(entDepositoProducto obj)
+        public void mod_Insertar_Deposito_Producto(entDepositoProducto obj)
         {
             ObjetoDato.insertarDepositoProducto(obj);
+        }
+        public void modEliminar_Codigo_Deposito_Producto(string codigo)
+        {
+            ObjetoDato.eliminar_Codigo_Deposito_Producto(codigo);
         }
     }
 }

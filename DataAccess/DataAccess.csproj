@@ -44,7 +44,8 @@
     <Compile Include="Clases\clasAlmacen.cs" />
     <Compile Include="Clases\clasCodigoBarra.cs" />
     <Compile Include="Clases\clasDeposito.cs" />
-    <Compile Include="Clases\clasDepositoProducto.cs" />
+    <Compile Include="Clases\Movimientos\clasCompraDetalle.cs" />
+    <Compile Include="Clases\Movimientos\clasDepositoProducto.cs" />
     <Compile Include="Clases\clasCADProducto.cs" />
     <Compile Include="Clases\clasIVA.cs" />
     <Compile Include="Clases\clasProveedor.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="Clases\clasTipoDocumento.cs" />
     <Compile Include="Clases\clasUnidadManejo.cs" />
     <Compile Include="Clases\Movimientos\clasCompra.cs" />
+    <Compile Include="Clases\Movimientos\clasKardex.cs" />
+    <Compile Include="Clases\Movimientos\clasKardexPorVencimientoYLote.cs" />
     <Compile Include="Entities\entAlmacen.cs" />
     <Compile Include="Entities\entCodigoBarra.cs" />
     <Compile Include="Entities\Movimientos\entCompra.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="Entities\entProveedor.cs" />
     <Compile Include="Entities\entTipoDocumento.cs" />
     <Compile Include="Entities\entUnidadManejo.cs" />
+    <Compile Include="Entities\Movimientos\entKardexPorVencimientoYLote.cs" />
     <Compile Include="MailServices\ServidorCorreoMaestro.cs" />
     <Compile Include="MailServices\SoporteSistema.cs" />
     <Compile Include="SqlServer\ConnectionToSql.cs" />

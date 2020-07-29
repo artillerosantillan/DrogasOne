@@ -10,7 +10,7 @@ namespace DataAccess.Entities
     {
         public int IDDeposito { get; set; }
         public string IDProducto {get; set;}
-        public int Stock {get; set; }
+        public decimal Stock {get; set; }
         public int Minimo {get; set; }
         public int Maximo {get; set; }
         public int DiasReposicion {get; set;}

@@ -31,5 +31,22 @@ namespace DataAccess.Clases
             }
 
         }
+        public void eliminar_Codigo_Barra_Producto(string codigo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = "DELETE FROM Barra WHERE IDProducto = @IDProducto";
+                    Comando.Parameters.AddWithValue("@IDProducto", codigo);
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader reader = Comando.ExecuteReader();
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+        }
     }
 }

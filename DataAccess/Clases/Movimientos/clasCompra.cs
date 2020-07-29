@@ -50,5 +50,49 @@ namespace DataAccess.Clases.Movimientos
                 
             }
         }
+        public int ultimo_Id_Compra()
+        {
+            int IDCompra = 0;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = @" SELECT ISNULL(MAX(IDCompra),0) AS IdCompra FROM Compra";//si el valor es nulo se asina el cero
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader reader = Comando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                            IDCompra = reader.GetInt32(0);
+                    }
+                    else
+                    reader.Close();
+                    connection.Close();
+                    return IDCompra;
+                }
+
+            }
+        }
+        public bool compras_Tiene_Movimientos_IDProveedor(int IDProveedor)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT TOP 1 1 FROM Compra WHERE IDProveedor=@IDProveedor";
+                    command.Parameters.AddWithValue("@IDProveedor", IDProveedor);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
     }
 }

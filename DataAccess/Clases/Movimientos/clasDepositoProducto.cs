@@ -35,11 +35,11 @@ namespace DataAccess.Clases
             }
         }
 
-            public int obtenerStockDepositoProducto(string CodigoProducto,int CodigoDeposito )
+            public decimal obtenerStockDepositoProducto(string CodigoProducto,int CodigoDeposito )
             {
                 using (var connection = GetConnection())
                 {
-                    int stock=0;
+                    decimal stock = 0;
                     connection.Open();
                     using (var Comando = new SqlCommand())
                     {
@@ -53,7 +53,7 @@ namespace DataAccess.Clases
                         SqlDataReader LeerFilas = Comando.ExecuteReader();
                     if (LeerFilas.Read())
                     {
-                        stock = LeerFilas.GetInt32(2);
+                        stock = LeerFilas.GetDecimal(2);
                         
                     }
                         LeerFilas.Close();
@@ -65,7 +65,7 @@ namespace DataAccess.Clases
 
             }
 
-        public void ActualizarStockDepositoProducto(string IDProducto,int IDDeposito, int Cantidad)
+        public void ActualizarStockDepositoProducto(string IDProducto,int IDDeposito, decimal Cantidad)
         {
             using (var connection = GetConnection())
             {
@@ -105,6 +105,23 @@ namespace DataAccess.Clases
                     Comando.Parameters.AddWithValue("@Maximo", obj.Maximo);
                     Comando.Parameters.AddWithValue("@DiasReposicion", obj.DiasReposicion);
                     Comando.Parameters.AddWithValue("@CantidadMinima", obj.CantidadMinima);
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader reader = Comando.ExecuteReader();
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+        }
+        public void eliminar_Codigo_Deposito_Producto(string codigo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = "DELETE FROM DepositoProducto WHERE IDProducto = @IDProducto";
+                    Comando.Parameters.AddWithValue("@IDProducto", codigo);
                     Comando.CommandType = CommandType.Text;
                     SqlDataReader reader = Comando.ExecuteReader();
                     reader.Close();

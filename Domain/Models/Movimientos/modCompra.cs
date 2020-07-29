@@ -15,5 +15,13 @@ namespace Domain.Models.Movimientos
         {
             return ObjetoDato.insertarCompra(obj);
         }
+            public int ultimo_Id_Compra()
+        {
+            return ObjetoDato.ultimo_Id_Compra();
+        }
+        public bool compras_Tiene_Movimientos_IDProveedor(int IDProveedor)
+        {
+            return ObjetoDato.compras_Tiene_Movimientos_IDProveedor(IDProveedor);
+        }
     }
 }   

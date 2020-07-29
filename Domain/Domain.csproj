@@ -43,15 +43,18 @@
   <ItemGroup>
     <Compile Include="Models\modAlmacen.cs" />
     <Compile Include="Models\modBarraProducto.cs" />
-    <Compile Include="Models\modCADProducto.cs" />
+    <Compile Include="Models\modCodigoBarra.cs" />
     <Compile Include="Models\modDeposito.cs" />
-    <Compile Include="Models\modDepositoProducto.cs" />
+    <Compile Include="Models\Movimientos\modKardexPorVencimientoYLote.cs" />
+    <Compile Include="Models\Movimientos\modCompraDetalle.cs" />
+    <Compile Include="Models\Movimientos\modDepositoProducto.cs" />
     <Compile Include="Models\modIVA.cs" />
     <Compile Include="Models\modProducto.cs" />
     <Compile Include="Models\modProveedor.cs" />
     <Compile Include="Models\modTipoDocumento.cs" />
     <Compile Include="Models\modUnidadManejo.cs" />
     <Compile Include="Models\Movimientos\modCompra.cs" />
+    <Compile Include="Models\Movimientos\modKardex.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using DataAccess.Clases;
 using DataAccess.Entities;
 using Domain.Models;
+using Domain.Models.Movimientos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,11 +88,18 @@ namespace Presentation.Modulos
                       MessageBoxDefaultButton.Button2);
             if (respuesta == DialogResult.No) return;
 
-            modProveedor objModEntidadPro = new modProveedor();
+            modCompra objeto_Compra = new modCompra();
+            if (objeto_Compra.compras_Tiene_Movimientos_IDProveedor(idProveedor = Convert.ToInt32(proveedorDataGridView.CurrentRow.Cells[0].Value)))
+            {
+                MessageBox.Show("No se puede Eliminar el proveedor, porque tiene movimientos",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            modProveedor objeto_Proveedor = new modProveedor();
             if (proveedorDataGridView.SelectedRows.Count > 0)
             {
                 idProveedor = Convert.ToInt32(proveedorDataGridView.CurrentRow.Cells[0].Value);
-                objModEntidadPro.modEliminarProveedor(idProveedor);
+                objeto_Proveedor.modEliminarProveedor(idProveedor);
                 ListarProveedores();
                 MessageBox.Show("Se elimino satisfactoriamente");
                 busquedaProveedorTextBox.Text = "";

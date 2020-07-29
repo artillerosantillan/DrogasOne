@@ -47,11 +47,11 @@
             this.notaEntradaTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.CompraGroupBox = new System.Windows.Forms.GroupBox();
+            this.numDocumentoLabel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.ProcedenciaTextBox = new System.Windows.Forms.TextBox();
             this.laboratorioTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.numDocEntradaTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.liquidacionTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -249,12 +249,12 @@
             // 
             // CompraGroupBox
             // 
+            this.CompraGroupBox.Controls.Add(this.numDocumentoLabel);
             this.CompraGroupBox.Controls.Add(this.label18);
             this.CompraGroupBox.Controls.Add(this.ProcedenciaTextBox);
             this.CompraGroupBox.Controls.Add(this.laboratorioTextBox);
             this.CompraGroupBox.Controls.Add(this.label17);
             this.CompraGroupBox.Controls.Add(this.label9);
-            this.CompraGroupBox.Controls.Add(this.numDocEntradaTextBox);
             this.CompraGroupBox.Controls.Add(this.label16);
             this.CompraGroupBox.Controls.Add(this.notaEntradaTextBox);
             this.CompraGroupBox.Controls.Add(this.liquidacionTextBox);
@@ -279,6 +279,17 @@
             this.CompraGroupBox.TabIndex = 11;
             this.CompraGroupBox.TabStop = false;
             this.CompraGroupBox.Text = "Compra:";
+            // 
+            // numDocumentoLabel
+            // 
+            this.numDocumentoLabel.AutoSize = true;
+            this.numDocumentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numDocumentoLabel.ForeColor = System.Drawing.Color.Red;
+            this.numDocumentoLabel.Location = new System.Drawing.Point(877, 31);
+            this.numDocumentoLabel.Name = "numDocumentoLabel";
+            this.numDocumentoLabel.Size = new System.Drawing.Size(217, 20);
+            this.numDocumentoLabel.TabIndex = 27;
+            this.numDocumentoLabel.Text = "Numero Documento a crear";
             // 
             // label18
             // 
@@ -316,19 +327,11 @@
             this.label17.TabIndex = 23;
             this.label17.Text = "Laboratorio:";
             // 
-            // numDocEntradaTextBox
-            // 
-            this.numDocEntradaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numDocEntradaTextBox.Location = new System.Drawing.Point(881, 31);
-            this.numDocEntradaTextBox.Name = "numDocEntradaTextBox";
-            this.numDocEntradaTextBox.Size = new System.Drawing.Size(344, 24);
-            this.numDocEntradaTextBox.TabIndex = 21;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(684, 37);
+            this.label16.Location = new System.Drawing.Point(684, 34);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(166, 18);
             this.label16.TabIndex = 20;
@@ -545,6 +548,7 @@
             this.borrartodoDetalleCompraBunifuFlatButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.borrartodoDetalleCompraBunifuFlatButton.Textcolor = System.Drawing.Color.White;
             this.borrartodoDetalleCompraBunifuFlatButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrartodoDetalleCompraBunifuFlatButton.Click += new System.EventHandler(this.borrartodoDetalleCompraBunifuFlatButton_Click);
             // 
             // borrarLineaBunifuFlatButton
             // 
@@ -580,6 +584,7 @@
             this.borrarLineaBunifuFlatButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.borrarLineaBunifuFlatButton.Textcolor = System.Drawing.Color.White;
             this.borrarLineaBunifuFlatButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.borrarLineaBunifuFlatButton.Click += new System.EventHandler(this.borrarLineaBunifuFlatButton_Click);
             // 
             // agregarBunifuFlatButton
             // 
@@ -710,6 +715,7 @@
             this.Name = "frmCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso de Materiales";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCompras_FormClosing);
             this.Load += new System.EventHandler(this.frmCompras_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -759,8 +765,6 @@
         private System.Windows.Forms.DataGridView entradaProductodataGridView;
         private System.Windows.Forms.TextBox totalTextBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox numDocEntradaTextBox;
-        private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuFlatButton borrartodoDetalleCompraBunifuFlatButton;
         private Bunifu.Framework.UI.BunifuFlatButton borrarLineaBunifuFlatButton;
         private Bunifu.Framework.UI.BunifuFlatButton agregarBunifuFlatButton;
@@ -771,5 +775,7 @@
         private System.Windows.Forms.TextBox ProcedenciaTextBox;
         private System.Windows.Forms.TextBox laboratorioTextBox;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label numDocumentoLabel;
+        private System.Windows.Forms.Label label16;
     }
 }

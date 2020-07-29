@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Entities;
 using Domain.Models;
+using Domain.Models.Movimientos;
 using Presentation.Modulos.Maestros.Productos;
 
 namespace Presentation.Modulos
 {
     public partial class frmProducto : Form
     {
-        entProducto objEntidadProd = new entProducto();
-        modProducto objModProducto = new modProducto();
+        entProducto entidad_Producto = new entProducto();
+        modProducto objeto_Producto = new modProducto();
         modBarraProducto objModBarraProduto = new modBarraProducto();
         modDepositoProducto objModDepositoProducto =new modDepositoProducto();
         string idProducto;
@@ -26,7 +27,7 @@ namespace Presentation.Modulos
         }
         void ListarProductos()
         {
-            DataTable dt = objModProducto.modListadoProducto();
+            DataTable dt = objeto_Producto.modListadoProducto();
             productosDataGridView.DataSource = dt;
             PersonalizarGrid();
 
@@ -97,11 +98,23 @@ namespace Presentation.Modulos
                      MessageBoxDefaultButton.Button2);
             if (respuesta == DialogResult.No) return;
 
-            modProveedor objModEntidadPro = new modProveedor();
+            modKardex objeto_kardex = new modKardex();
+            if (objeto_kardex.kardex_Tiene_Movimientos_IDProducto(Convert.ToString(productosDataGridView.CurrentRow.Cells[0].Value)))
+            {
+                MessageBox.Show("No se puede Eliminar el proveedor, porque tiene movimientos",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            modCodigoBarra objeto_Codigo_Barra = new modCodigoBarra();
+            objeto_Codigo_Barra.modEliminar_Codigo_Barra_Producto(Convert.ToString(productosDataGridView.CurrentRow.Cells[0].Value));
+            modDepositoProducto objeto_Deposito_Producto = new modDepositoProducto();
+            objeto_Deposito_Producto.modEliminar_Codigo_Deposito_Producto(Convert.ToString(productosDataGridView.CurrentRow.Cells[0].Value));
+                                 
             if (productosDataGridView.SelectedRows.Count > 0)
             {
                 idProducto = Convert.ToString(productosDataGridView.CurrentRow.Cells[0].Value);
-                objModProducto.modEliminarProducto(idProducto);
+                objeto_Producto.modEliminarProducto(idProducto);
                 ListarProductos();
                 MessageBox.Show("Se elimino satisfactoriamente");
                 busquedaProductoTextBox.Text = "";
