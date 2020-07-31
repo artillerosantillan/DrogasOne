@@ -254,6 +254,7 @@
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
             this.salidasToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.salidasToolStripMenuItem.Text = "Pedidos Reposición";
+            this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
             // 
             // trasladosToolStripMenuItem
             // 

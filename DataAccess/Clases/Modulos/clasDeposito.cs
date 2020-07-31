@@ -29,5 +29,31 @@ namespace DataAccess.Clases
                 }
             }
         }
+        public int devolver_IDDeposito_Depositoo(String Buscar)
+        {
+            int IDDeposito = 0;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = @"SELECT IDDeposito FROM Deposito 
+                                            WHERE Descripcion=@Buscar";
+                    Comando.Parameters.AddWithValue("@Buscar", Buscar);
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader reader = Comando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        IDDeposito = reader.GetInt32(0);
+                    }
+                    else
+                        reader.Close();
+                    connection.Close();
+                    return IDDeposito;
+                }
+
+            }
+        }
     }
 }

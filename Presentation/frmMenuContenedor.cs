@@ -1,5 +1,6 @@
 ﻿using Presentation.Modulos;
 using Presentation.Movimientos;
+using Presentation.Movimientos.Salidas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,13 @@ namespace Presentation
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCompras miForm = new frmCompras();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPedidoReposicion miForm = new frmPedidoReposicion();
             miForm.MdiParent = this;
             miForm.Show();
         }

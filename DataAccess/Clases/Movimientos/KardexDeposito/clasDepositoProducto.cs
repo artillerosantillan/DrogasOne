@@ -34,8 +34,7 @@ namespace DataAccess.Clases
                 }
             }
         }
-
-            public decimal obtenerStockDepositoProducto(string CodigoProducto,int CodigoDeposito )
+        public decimal obtenerStockDepositoProducto(string CodigoProducto,int CodigoDeposito )
             {
                 using (var connection = GetConnection())
                 {
@@ -65,7 +64,7 @@ namespace DataAccess.Clases
 
             }
 
-        public void ActualizarStockDepositoProducto(string IDProducto,int IDDeposito, decimal Cantidad)
+        public void aumentar_Stock_Deposito_Producto(string IDProducto,int IDDeposito, decimal Cantidad)
         {
             using (var connection = GetConnection())
             {
@@ -74,6 +73,28 @@ namespace DataAccess.Clases
                 {
                     Comando.Connection = connection;
                     Comando.CommandText = @"UPDATE DepositoProducto SET Stock = Stock + @Cantidad 
+                                            WHERE IDDeposito=@IDDeposito AND IDProducto=@IDProducto";
+
+                    Comando.Parameters.AddWithValue("@IDDeposito", IDDeposito);
+                    Comando.Parameters.AddWithValue("@IDProducto", IDProducto);
+                    Comando.Parameters.AddWithValue("@Cantidad", Cantidad);
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader reader = Comando.ExecuteReader();
+                    reader.Close();
+                    connection.Close();
+                }
+
+            }
+        }
+        public void restar_Stock_DepositoProducto(string IDProducto, int IDDeposito, decimal Cantidad)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = @"UPDATE DepositoProducto SET Stock = Stock - @Cantidad 
                                             WHERE IDDeposito=@IDDeposito AND IDProducto=@IDProducto";
 
                     Comando.Parameters.AddWithValue("@IDDeposito", IDDeposito);
@@ -127,6 +148,34 @@ namespace DataAccess.Clases
                     reader.Close();
                     connection.Close();
                 }
+            }
+        }
+        public decimal devolver_Stock_DepositoProducto(int IDDeposito, String IDProducto)
+        {
+            Decimal Stock = 0;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var Comando = new SqlCommand())
+                {
+                    Comando.Connection = connection;
+                    Comando.CommandText = @"SELECT ISNULL(Stock,0) AS Stock
+                                            FROM DepositoProducto
+                                            WHERE IDProducto=@IDProducto AND IDDeposito = @IDDeposito";
+                    Comando.Parameters.AddWithValue("@IDDeposito", IDDeposito);
+                    Comando.Parameters.AddWithValue("@IDProducto", IDProducto);
+                    Comando.CommandType = CommandType.Text;
+                    SqlDataReader reader = Comando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        Stock = reader.GetDecimal(0);
+                    }
+                    else
+                        reader.Close();
+                    connection.Close();
+                    return Stock;
+                }
+
             }
         }
     }

@@ -36,10 +36,9 @@ namespace Presentation.Movimientos
             PersonalizarGrid();
 
         }
-        //-----------------------Listar Deposito en ComboBox -----------------------
         public void Enumerar_Num_Compra()
         {
-            entProducto objeto_Entidad_Producto = new entProducto();// 
+            //entProducto objeto_Entidad_Producto = new entProducto();// 
             modCompra objeto_Compra = new modCompra();//creamos el modelo producto
             int ultimo_Id_compra = objeto_Compra.ultimo_Id_Compra();
             ultimo_Id_compra = ultimo_Id_compra + 1;
@@ -52,7 +51,7 @@ namespace Presentation.Movimientos
             depositoComboBox.DisplayMember = "Descripcion";
             depositoComboBox.ValueMember = "IDDeposito";
         }
-        //-----------------------Listar Proveedor en ComboBox ----------------------
+  
         public void Listar_Proveedor_ComboBox()
         {
             modProveedor objProd = new modProveedor();
@@ -351,7 +350,7 @@ namespace Presentation.Movimientos
                 else
                 {
                     // si el producto tiene saldo stock se lo suma la cantidad nueva
-                    objeto_Deposito_Producto.modActualizarStockDepositoProducto(miDetalle.IDProducto, cabecera_compra.IDDeposito, miDetalle.Cantidad);
+                    objeto_Deposito_Producto.aumentarStockDepositoProducto(miDetalle.IDProducto, cabecera_compra.IDDeposito, miDetalle.Cantidad);
                 }
 
                 // 3ro actualizamos el Kardex, creamos un objeto miKardex que nos devuelve el ultimo kardex registrado
@@ -422,6 +421,7 @@ namespace Presentation.Movimientos
             misDetalle.Clear();
             RefrescaGrid();
             depositoComboBox.Focus();
+            Enumerar_Num_Compra();
 
         }
 

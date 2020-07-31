@@ -20,9 +20,13 @@ namespace Domain.Models
         {
             return ObjetoDato.obtenerStockDepositoProducto(CodigoProducto, CodigoDeposito);
         }
-        public void modActualizarStockDepositoProducto(string IDProducto, int IDDeposito, decimal Cantidad)
+        public void aumentarStockDepositoProducto(string IDProducto, int IDDeposito, decimal Cantidad)
         {
-            ObjetoDato.ActualizarStockDepositoProducto(IDProducto, IDDeposito, Cantidad);
+            ObjetoDato.aumentar_Stock_Deposito_Producto(IDProducto, IDDeposito, Cantidad);
+        }
+        public void restarStockDepositoProducto(string IDProducto, int IDDeposito, decimal Cantidad)
+        {
+            ObjetoDato.restar_Stock_DepositoProducto(IDProducto, IDDeposito, Cantidad);
         }
         public void mod_Insertar_Deposito_Producto(entDepositoProducto obj)
         {
@@ -31,6 +35,10 @@ namespace Domain.Models
         public void modEliminar_Codigo_Deposito_Producto(string codigo)
         {
             ObjetoDato.eliminar_Codigo_Deposito_Producto(codigo);
+        }
+        public decimal devolver_Stock_DepositoProducto(int IDDeposito, String IDProducto)
+        {
+            return ObjetoDato.devolver_Stock_DepositoProducto(IDDeposito, IDProducto);
         }
     }
 }

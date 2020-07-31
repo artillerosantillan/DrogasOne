@@ -15,6 +15,10 @@ namespace Domain.Models
             {
                 return ObjetoDato.ListarDeposito();
             }
-        
+        public int devolver_Id_Deposito(string buscar)
+        {
+            return ObjetoDato.devolver_IDDeposito_Depositoo(buscar);
+        }
+
     }
 }

@@ -98,6 +98,18 @@
     <Compile Include="Movimientos\Compras\frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\Salidas\frmBusquedaCentroSalud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\Salidas\frmBusquedaCentroSalud.Designer.cs">
+      <DependentUpon>frmBusquedaCentroSalud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\Salidas\frmPedidoReposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\Salidas\frmPedidoReposicion.Designer.cs">
+      <DependentUpon>frmPedidoReposicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\Compras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Salidas\frmBusquedaCentroSalud.resx">
+      <DependentUpon>frmBusquedaCentroSalud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\Salidas\frmPedidoReposicion.resx">
+      <DependentUpon>frmPedidoReposicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

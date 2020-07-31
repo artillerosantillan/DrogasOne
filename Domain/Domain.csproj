@@ -41,21 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\modAlmacen.cs" />
-    <Compile Include="Models\modBarraProducto.cs" />
-    <Compile Include="Models\modCodigoBarra.cs" />
-    <Compile Include="Models\modDeposito.cs" />
-    <Compile Include="Models\Movimientos\modKardexPorVencimientoYLote.cs" />
-    <Compile Include="Models\Movimientos\modCompraDetalle.cs" />
-    <Compile Include="Models\Movimientos\modDepositoProducto.cs" />
-    <Compile Include="Models\modIVA.cs" />
-    <Compile Include="Models\modProducto.cs" />
-    <Compile Include="Models\modProveedor.cs" />
-    <Compile Include="Models\modTipoDocumento.cs" />
-    <Compile Include="Models\modUnidadManejo.cs" />
-    <Compile Include="Models\Movimientos\modCompra.cs" />
-    <Compile Include="Models\Movimientos\modKardex.cs" />
-    <Compile Include="UserModel.cs" />
+    <Compile Include="Models\Modulos\modAlmacen.cs" />
+    <Compile Include="Models\Modulos\modBarraProducto.cs" />
+    <Compile Include="Models\Modulos\modCodigoBarra.cs" />
+    <Compile Include="Models\Modulos\modDeposito.cs" />
+    <Compile Include="Models\Movimientos\KardexDeposito\modKardexPorVencimientoYLote.cs" />
+    <Compile Include="Models\Movimientos\Compras\modCompraDetalle.cs" />
+    <Compile Include="Models\Movimientos\KardexDeposito\modDepositoProducto.cs" />
+    <Compile Include="Models\Modulos\modIVA.cs" />
+    <Compile Include="Models\Modulos\modProducto.cs" />
+    <Compile Include="Models\Modulos\modProveedor.cs" />
+    <Compile Include="Models\Modulos\modTipoDocumento.cs" />
+    <Compile Include="Models\Modulos\modUnidadManejo.cs" />
+    <Compile Include="Models\Movimientos\Compras\modCompra.cs" />
+    <Compile Include="Models\Movimientos\KardexDeposito\modKardex.cs" />
+    <Compile Include="Models\Modulos\modCentroSalud.cs" />
+    <Compile Include="Models\Movimientos\Salidas\modPedidoReposicion.cs" />
+    <Compile Include="Models\Movimientos\Salidas\modPedidoReposicionDetalle.cs" />
+    <Compile Include="Models\Segurity\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +70,9 @@
       <Project>{fa840830-08d9-4f8a-9ef3-f91e9b172577}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\egurity\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
