@@ -1,6 +1,7 @@
 ﻿using Common.Clases;
 using DataAccess.Entities;
 using DataAccess.Entities.Modulos;
+using DataAccess.Entities.Movimientos;
 using DataAccess.Entities.Movimientos.Salidas;
 using Domain.Models;
 using Domain.Models.Movimientos;
@@ -114,6 +115,17 @@ namespace Presentation.Movimientos.Salidas
                 productoTextBox.Focus();
                 return;
             }
+
+            for (int i = 0; i < misDetallesPedidoReposicion.Count; i++)
+            {
+                if (misDetallesPedidoReposicion[i].IDProducto == productoTextBox.Text)
+                {
+                    errorProvider1.SetError(productoTextBox, "El producto ya se ingreso");
+                    productoTextBox.Focus();
+                    return;
+                }
+            }
+
             errorProvider1.Clear();
             if (cantidadTextBox.Text == string.Empty)
             {
@@ -270,34 +282,34 @@ namespace Presentation.Movimientos.Salidas
                 MessageBoxDefaultButton.Button2);
             if (rta == DialogResult.No) return;
 
+            int IDDeposito = (int)depositoComboBox.SelectedValue;
             //Entidad Cabecera Pedido Reposicion
             entPedidoReposicion entidad_Pedido_Reposicion = new entPedidoReposicion();
             entidad_Pedido_Reposicion.Fecha = fechaSalidaDateTimePicker.Value;
             entidad_Pedido_Reposicion.IDCentroSalud = (int)centroSaludComboBox.SelectedValue;
-            entidad_Pedido_Reposicion.IDDeposito = (int)depositoComboBox.SelectedValue;
+            entidad_Pedido_Reposicion.IDDeposito = IDDeposito;
             modPedidoReposicion objeto_Pedido_Reposicion = new modPedidoReposicion();
             // -----1ro Insertamos Pedido Reposicion en BD
             int obtener_ultimo_IDPedido_Reposicion = objeto_Pedido_Reposicion.insertar_Pedido_Reposicion(entidad_Pedido_Reposicion);
-
             // -----2do Insertamos y recorremos la lista PedidoReposicion
             foreach (entDetallePedidoReposicion miDetalle in misDetallesPedidoReposicion)
             {
                 modDepositoProducto objeto_Deposito_Producto = new modDepositoProducto();
                 // restamos la cantidad de reposicion a stock de DepositoProducto
-                objeto_Deposito_Producto.restarStockDepositoProducto(miDetalle.IDProducto, entidad_Pedido_Reposicion.IDDeposito, miDetalle.Cantidad);
+                objeto_Deposito_Producto.restarStockDepositoProducto(miDetalle.IDProducto, IDDeposito, miDetalle.Cantidad);
 
                 // 3ro actualizamos el Kardex, creamos un objeto miKardex que nos devuelve el ultimo kardex registrado
                 entKardex miKardex = new entKardex();
                 entKardex nuevoKardex = new entKardex();
                 modKardex objeto_Kardex = new modKardex();
-                miKardex = objeto_Kardex.devolver_Ultimo_Kardex(miDetalle.IDProducto, entidad_Pedido_Reposicion.IDDeposito);
+                miKardex = objeto_Kardex.devolver_Ultimo_Kardex(miDetalle.IDProducto, IDDeposito);
 
                 int IDKardex;
                 decimal nuevoSaldo;
                 nuevoSaldo = miKardex.Saldo - miDetalle.Cantidad;
                 
                 // insertamos el nuevo Kardex
-                nuevoKardex.IDDeposito = entidad_Pedido_Reposicion.IDDeposito;
+                nuevoKardex.IDDeposito = IDDeposito;
                 nuevoKardex.IDProducto = miDetalle.IDProducto;
                 nuevoKardex.Entidad = centroSaludComboBox.Text;
                 nuevoKardex.Fecha = fechaSalidaDateTimePicker.Value;
@@ -317,19 +329,23 @@ namespace Presentation.Movimientos.Salidas
                 entidad_Pedido_Reposicion_Detalle.IDKardex = IDKardex;
                 objeto_Pedido_Reposicion_Detalle.insertar_Pedido_Reposicion(entidad_Pedido_Reposicion_Detalle);
 
-                ////---5to Actualizamos KardexPorVencimientoYLote
-                //modKardexPorVencimientoYLote objeto_Kardex_Por_Vencimiento_Y_Lote = new modKardexPorVencimientoYLote();
-                //entKardexPorVencimientoYLote entidad_objeto_Kardex_Por_Vencimiento_Y_Lote = new entKardexPorVencimientoYLote();
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.IDDeposito = cabecera_compra.IDDeposito;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.IDProducto = miDetalle.IDProducto;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.Lote = miDetalle.Lote;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.FechaVencimiento = miDetalle.FechaVencimiento;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.Entrada = miDetalle.Cantidad;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.Salida = 0;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.Saldo = miDetalle.Cantidad;
-                //entidad_objeto_Kardex_Por_Vencimiento_Y_Lote.NuevoSaldo = miDetalle.Cantidad;
-                //objeto_Kardex_Por_Vencimiento_Y_Lote.insertar_Kardex_Por_Vencimiento_Y_Lote(entidad_objeto_Kardex_Por_Vencimiento_Y_Lote);
+                //---5to Actualizamos KardexPorVencimientoYLote
+                modKardexPorVencimientoYLote objeto_Kardex_Por_Vencimiento_Y_Lote = new modKardexPorVencimientoYLote();
+                bool Bandera = true;
+                objeto_Kardex_Por_Vencimiento_Y_Lote.restar_Saldo_Kardex_Por_Vencimiento_Y_Lote(miDetalle.IDProducto,IDDeposito, miDetalle.Cantidad);
 
+                while (Bandera == true)
+                {
+                    decimal saldo_Kardex_Por_Vencimiento_Y_Lote = objeto_Kardex_Por_Vencimiento_Y_Lote.devolver_Saldo_Kardex_Por_Vencimiento_Y_Lote(miDetalle.IDProducto, IDDeposito);
+                    objeto_Kardex_Por_Vencimiento_Y_Lote.eliminar_Kardex_Por_Vencimiento_Y_Lote_Saldo_Cero();
+                    if (saldo_Kardex_Por_Vencimiento_Y_Lote < 0)
+                    {
+                        saldo_Kardex_Por_Vencimiento_Y_Lote = saldo_Kardex_Por_Vencimiento_Y_Lote * -1;
+                        objeto_Kardex_Por_Vencimiento_Y_Lote.restar_Saldo_Kardex_Por_Vencimiento_Y_Lote(miDetalle.IDProducto, IDDeposito, saldo_Kardex_Por_Vencimiento_Y_Lote);
+                    }
+                    else
+                        Bandera = false;
+                }
             }
 
             MessageBox.Show(string.Format("La compra: N˚- 0{0}, fue grabada de forma exito", obtener_ultimo_IDPedido_Reposicion),

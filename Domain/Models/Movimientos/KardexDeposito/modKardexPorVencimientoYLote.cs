@@ -19,5 +19,13 @@ namespace Domain.Models.Movimientos
         {
              ObjetoDato.eliminar_Kardex_Por_Vencimiento_Y_Lote_Saldo_Cero();
         }
+        public void restar_Saldo_Kardex_Por_Vencimiento_Y_Lote(string IDProducto, int IDDeposito, decimal Cantidad)
+        {
+            ObjetoDato.restar_Saldo_Kardex_Por_Vencimiento_Y_Lote(IDProducto, IDDeposito, Cantidad);
+        }
+        public decimal devolver_Saldo_Kardex_Por_Vencimiento_Y_Lote(string IDProducto, int IDDeposito)
+        {
+            return ObjetoDato.devolver_Saldo_Kardex_Por_Vencimiento_Y_Lote(IDProducto, IDDeposito);
+        }
     }
 }
