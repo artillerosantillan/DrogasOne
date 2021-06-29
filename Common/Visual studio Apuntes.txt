@@ -1,0 +1,171 @@
+ExisteProducto
+SELECT 1
+FROM Producto
+WHERE IDProducto=@IDProducto
+
+GetProductoByBarra
+SELECT Producto .IDProducto, Descripcion, Medida, IDUnidadManejo, IDAlmacen, Precio, Imagen, Notas 
+FROM Barra INNER JOIN Producto ON Barra.IDProducto = Producto.IDProducto
+WHERE Barra=@Barra
+
+
+GetProductoByIDProducto
+SELECT IDProducto, Descripcion, Medida, IDUnidadManejo, IDAlmacen, Precio, Imagen, Notas FROM dbo.Producto
+WHERE IDProducto=@IDProducto
+
+
+TextBox
+passwordchar  --> que no se vea lo que digitamos
+TextAlign --> Alinea el texto en un boton
+
+PictureBox
+SizeMode -> paque ucupe el espacio (stretchImage)
+
+Formulario
+AcceptButton --> cuando precionen enter sepa cual es el bonton de enter
+CancelButton
+formBorderStyle --> 	no cambia e tamanio
+maximizeBox --> Elimina el boton de maximizar
+minimiceBox--> Elimina el boton de minimizar
+startposition-->CenterScreen centraliza el formulario
+
+
+FormularioContenedor
+
+IsMdiContainer true
+windowsstae Maximized
+metodo FormClosing --> aplication.Exit();
+
+formulario Proveedores.
+Anchor -->Derecha y inferior 
+
+proveedorBindingNavigator --> AddnewItem (Ninguno) 
+
+Formulario Cambiar Clave
+AcceptButton --> cuando precionen enter sepa cual es el bonton de enter
+CancelButton
+formBorderStyle --> (FixedDialog) no cambia e tamanio
+maximizeBox --> Elimina el boton de maximizar
+minimiceBox--> Elimina el boton de minimizar
+startposition-->CenterScreen centraliza el formulario al 
+
+error hresult e_fail .com
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\gacutil.exe" /i "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.Shell.Interop.11.0.dll"
+
+
+
+Form Login
+
+
+
+FormLogin:
+
+-FormBorderStyle= None
+-Opacity= 90 %
+-Size= 780, 330
+-BackColor= 39, 57, 80
+-StartPosition= Center Screem
+
+TextBox User y Pass
+
+-BackColor= 39, 57, 80
+-BorderStyle= None
+-Font= Century Gothic 12 pt
+-ForeColor= Silver
+-Size= 408, 20
+-Text (User)= Usuario
+-Name=txtuser
+-Text (Pass)= Contraseña
+-Name=txtpass
+
+Panel 1
+
+-BackColor=0, 100, 182
+-Dock=Left
+-Name= Panel1
+
+Button Login
+
+-BackColor= 33, 53, 73
+-FlatStyle= Flat
+-FlatAppearance.BorderColor= 85, 159, 127
+-FlatAppearance. MouseDownBackColor = 20, 20, 20
+-FlatAppearance.MouseOverBackColor = 70, 118, 126
+-ForeColor=LightGray
+-Name=btnLogin
+Size=408, 40
+-Text= ACCEDER
+
+Picture Box Minimize and Close
+
+-Cursor= Hand
+-Name(Minimize)= btnMinimizar
+-Name(Close)= btnCerrar
+
+
+
+Hola David, te comento mas o menos como es que trabajo, en el caso de los lotes te recomendaría en el almacén principal y que al almacén de venta vaya una cantidad mínima, porque esto porque en el almacén principal manejaría el control del ingreso de los lotes y las salidas hacia el almacén venta, ya que al momento de la venta es muy difícil ir indicando que lote entregas, cosa que si podrías indicar cuando lo sacas o trasladas del almacén principal hacia el de venta, al menos mi enfoque seria de esa manera.
+Ahora en cuanto a la estructura o tablas a utilizar yo utilizo lo siguiente:
+Catalogo ----> es la tabla donde tengo indicada toda la lista de los productos con sus características de cada producto, precios y demás.
+Maestro -----> tabla donde se indica la referencia del producto cuyo origen es del catálogo, código, rubro (clasificación), subrubro (sub clasificación), el almacén, referencia de stock de existencia, es decir en catalogo podría tener 10 mil productos, pero en maestro en un almacén determinado solo podría manejar 3 mil productos y en otro almacén 5 mil, es decir solo los productos que mueve dicho almacén, pero el origen de todo es del catalogo, ahora en maestro podría también manejar precios si en cada punto se maneja un precio diferente, según la política de la empresa.
+En mi caso para los lotes lo dividí en dos tablas
+Lotes -------> donde se indica la referencia del lote con su fecha de vencimiento y de ingreso, documento de ingreso, código del producto y almacén a donde ingresa.
+Kardexlotes -------> en esta tabla indico todas las salidas de los lotes existente de la tabla lotes, porque lo hice? así porque fácilmente con una relación puedo indicar las salidas de la tabla lotes realizar una suma rápida de todas las salidas y determinar la cantidad o existencias faltantes o muchas cosas más relacionadas con los lotes como vencimientos y cualquier cosa relacionada con lotes.
+Kardex ------> esta tabla contendrá una copia de cada movimiento de cada producto cuyo origen puede ser de una compra, venta, traslado o cualquier movimiento permitido en almacén, de esta manera fácilmente tienes un kardex del producto consultando en una sola tabla indicando el código del producto y el almacén a consulta, también con esta tabla fácilmente obtienes el stock de un producto o de todos los productos, pero también fácilmente puedes relacionarlo con los documentos de origen y obtener su referencia de ellos.
+
+Ahora para genera los movimientos de almacén estos como comente vienen dados por compras, ventas, movimientos de almacén (ingresos/salidas/traslados), devoluciones por nota de crédito, movimientos de producción (ingresos de nuevos productos producidos y salidas de los insumos para esos productos producidos) en este caso manejo las tablas correspondientes para cada caso
+
+compras ----> cabecera de compras con un campo autoincremental para relacionado con la tabla siguiente
+comprasitem ----> aquí indico los productos que contiene la compra relacionada por el campo autoincremental de compras
+
+ventas ----> cabecera de venta igualmente con el campo autoincremental para relacionar la tabla siguiente
+ventasitem ----> items de la venta donde se indica los productos de venta
+
+notacredito -----> cabecera de las notas de crédito
+notacreditoitem ----> referencia de los productos de la nota de crédito
+
+movalmacen ----> cabecera del movimiento de almacén
+movalmacenitem -----> items del movimiento de almacén con la referencia de productos
+
+producccion y produccion item ----> idem que las tablas anteriores.
+
+Ahora por cada ingreso de producto en cada uno de los casos se hace un ingreso igualmente o simultáneamente en la tabla kardex, ahora las tablas maestro tienen integridad referencial con la tabla catalogo, y kardex con la tabla maestro, igualmente las demás tablas.
+
+Espero que lo indicado te de una idea de lo que necesitas trabajar.
+
+
+
+   ( STOCK i-1 * CUP i-1 ) + (ENTRADA i * CUi )
+
+   CUP i    =  ---------------------------------------------
+
+                              STOCK i-1 + ENTRADA i
+
+ 
+
+ 
+
+   STOCK i  =  STOCK i-1 + ENTRADA i - SALIDA i 
+
+ 
+
+donde:
+
+               STOCK i   =   stock acumulado del producto a la fecha
+
+               CUP i       =   costo unitario promedio del producto a la fecha
+
+              ENTRADA i  =   cantidad total de las entradas para esa fecha
+
+              SALIDA i    =   cantidad total de las salidas para esa fecha
+
+              CU i          =   precio unitario promedio ponderado de las Entradas
+
+Espero que puedas comunicarte, te dejo mi correo electrónico:
+
+sebavega_valdivia@hotmail.com
+
+
+
+
+https://www.odoo.com/documentation/12.0/es/applications/inventory_and_mrp/inventory/overview/concepts/double-entry.html
